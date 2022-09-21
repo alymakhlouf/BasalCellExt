@@ -47,12 +47,12 @@ from PIL import ImageDraw
 from PIL import ImageFont
 
 # custom modules
-import neighbours
-import cell_filter
-import radial_vectors as rv
-import geometry
-import hist_plot
-import mask_generate
+from basalcellext import neighbours
+from basalcellext import cell_filter
+from basalcellext import radial_vectors as rv
+from basalcellext import geometry
+from basalcellext import hist_plot
+from basalcellext import mask_generate
 
 # close all hdf5/h5 files
 for obj in gc.get_objects():   # Browse through ALL objects
