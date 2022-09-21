@@ -22,9 +22,6 @@ import cv2
 import array as arr
 import napari
 
-# %matplotlib inline
-# %config InlineBackend.figure_format = 'retina'
-
 from stardist import fill_label_holes, relabel_image_stardist, random_label_cmap
 from stardist import random_label_cmap, _draw_polygons, export_imagej_rois
 from stardist.models import StarDist2D
