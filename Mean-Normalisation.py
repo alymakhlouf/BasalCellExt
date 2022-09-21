@@ -16,20 +16,9 @@ import os
 import glob
 import matplotlib.pyplot as plt
 
-
-#culture = '3D WT Spheroids'
-#culture = 'cMyc i Spheroids'
-#culture = 'TagRFP-aPKCi 2D culture'
-#culture = 'TagRFP-aPKCi Spheroids'
 culture = '3D Microcavity'
 
-#experiment = 'Brachyury-Podxl-Factin_4'
-#experiment = 'Sox17-Podxl-Factin_3'
 experiment = '24h_2'
-#experiment = 'CT_1'
-#experiment = 'cMyc_i_1'
-#experiment = '2D EpiSC medium'
-#experiment = '2D spheroid medium'
 
 #sub_experiment = 'with dox'
 #sub_experiment = 'without dox'
@@ -123,14 +112,8 @@ if nuc_log_mean == 0:
     bra_mean = math.e**(bra_log_mean + bra_log_std / 2)
     np.save(log_mean_directory + culture + '_' + experiment + '_Log_Mean', bra_log_mean)
 
-# elif 'Sox17' in experiment:
-#     sox17_log_mean = np.log(data_array[np.where(data_array != 0)]).mean()
-#     sox17_log_std = np.log(data_array[np.where(data_array != 0)]).std()
-#     sox17_mean = math.e**(sox17_log_mean + sox17_log_std / 2)
-#     np.save(log_mean_directory + culture + '_' + experiment + '_Log_Mean', sox17_log_mean)
-
 plt.figure()
-#plt.hist(data_MN_array, bins = 100)
+plt.hist(data_MN_array, bins = 100)
 plt.hist(np.log(data_MN_array[np.where(data_MN_array != 0)]), bins = 100)
 plt.show()
     
