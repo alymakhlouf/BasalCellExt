@@ -36,4 +36,3 @@ At this point, the following scripts can be run directly, making sure all releva
 - StarDist2D.py
 - StarDist3D_Basic.py
 - StarDist3D_Density.py
-
