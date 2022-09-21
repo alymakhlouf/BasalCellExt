@@ -1,6 +1,7 @@
-# -*- coding: utf-8 -*-
 """
-Created on Wed May 26 10:20:59 2021
+RUNS STARDIST 2D ANALYSIS ON 2D EPISC MONOLAYER CULTURES
+QUANTIFIES FLUORESCENCE INTENSITY OF NUCLEAR (BRACHYURY) AND CYTOPLASMIC (aPKCi-TagRFP) MARKERS
+CLASSIFIES CELLS BASED ON POSITIVE/NEGATIVE BRACHYURY and aPKCi-TagRFP EXPRESSION
 
 @author: Aly Makhlouf
 """
@@ -45,18 +46,11 @@ import pandas as pd
 model = StarDist2D.from_pretrained('2D_versatile_fluo') #2D_versatile_fluo, 2D_demo, 2D_paper_dsb2018
     
 # import image
-#folder_name = '2D EpiSC medium'
 folder_name = '2D spheroid medium'
 
-#sub_folder_name = 'with dox'
 sub_folder_name = 'without dox'
 
 sub_sub_folder_name = '2021-Jul-1'
-
-#sub_sub_folder_name = '2021-Jun-29'
-#sub_sub_folder_name = '2021-Jun-3'
-
-#sub_sub_folder_name = '2021-May-31'
 
 # SET UP OUTPUT DIRECTORY 
 output_directory = 'D:\\User Data\\Aly\\Nanami\\' + folder_name + '\\' + sub_folder_name + '\\' + sub_sub_folder_name + '\\'
