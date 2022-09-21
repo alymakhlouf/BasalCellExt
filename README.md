@@ -23,13 +23,13 @@ Otherwise, you need to separately generate segmentations in [ilastik](https://ww
 At this point, the following script can be run directly, making sure all relevant directories in the script map to the relevant 'Object Prediction Map' files:
 - StarDist3D.py
 
-The following scripts have a corresponding '...\_Pre-Processing' script that needs to be run first:
+The following scripts have corresponding '...\_Pre-Processing.py' scripts that need to be run first:
 
 - StarDist2D.py
 - StarDist3D_Basic.py
 - StarDist3D_Density.py
 
-The 'Pre-Processing' scripts will generate cropped TIF files of individual spheroids in each image, as well as a nuclear label mask in HDF5 format for each spheroid, using [StarDist](https://github.com/stardist/stardist). You will need to input these cropped TIF files and their corresponding nuclear label files into an 'Object Classification' Workflow [Inputs: Raw Data, Segmentation] (https://www.ilastik.org/documentation/objects/objects) and use this to train a positive/negative nuclear marker classifier. This will generate a set of 'Object Prediction Map' files in H5 format. 
+'Pre-Processing' scripts will generate cropped TIF files of individual spheroids in each image, as well as a nuclear label mask in HDF5 format for each spheroid, using [StarDist](https://github.com/stardist/stardist). You will need to input these cropped TIF files and their corresponding nuclear label files into an 'Object Classification' Workflow [Inputs: Raw Data, Segmentation] (https://www.ilastik.org/documentation/objects/objects) and use this to train a positive/negative nuclear marker classifier. This will generate a set of 'Object Prediction Map' files in H5 format. 
 
 At this point, the following scripts can be run directly, making sure all relevant directories in the scripts map to the relevant 'Object Prediction Map' files:
 
