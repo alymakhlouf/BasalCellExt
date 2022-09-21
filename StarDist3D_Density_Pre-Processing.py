@@ -35,8 +35,8 @@ import scipy
 import cv2 as cv
 
 # custom modules
-import roi
-import coordinate
+from basalcellext import roi
+from basalcellext import coordinate
 
 
 #%gui qt5 # use for napari in Jupyter notebook, comment otherwise %gui qt5
