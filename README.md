@@ -21,7 +21,7 @@ Otherwise, you need to separately generate segmentations in [ilastik](https://ww
 At this point, the following script can be run directly, making sure all relevant directories in the script map to the relevant 'Object Prediction Map' files:
 - StarDist3D.py
 
-The following scripts have a corresponding '...Pre-Processing' script that needs to be run first:
+The following scripts have a corresponding '...\_Pre-Processing' script that needs to be run first:
 
 - StarDist2D.py
 - StarDist3D_Basic.py
