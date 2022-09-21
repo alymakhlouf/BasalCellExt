@@ -37,28 +37,20 @@ import scipy
 import cv2 as cv
 
 # custom modules
-import roi
-import coordinate
+from basalcellext import roi
+from basalcellext import coordinate
 
 
 #%gui qt5 # use for napari in Jupyter notebook, comment otherwise %gui qt5
 
 # specify files to be analysed
 by = 'Marta'
-#by = 'Nanami'
 
 culture = '3D_images_of_WT_Epiblast_spheroid'
-#culture = '3D images of Epiblast spheroid with cMyc inh'
 
-#experiment = 'Podxl_E-cad_Bra'
-#experiment = 'Brachyury-Podxl-Factin'
 experiment = 'Sox17-Podxl-Factin'
-#experiment = 'Podxl_E-cad_SOX17'
-#experiment = 'exp2'
 
 sub_experiment_0 = 'exp1'
-#sub_experiment_0 = 'CT'
-#sub_experiment_0 = 'cMyc i'
 
 packing_correction = [1,1,0.5,2*np.sqrt(3)-3, np.sqrt(6)-2,np.sqrt(2)-1,np.sqrt(2)-1]
 
