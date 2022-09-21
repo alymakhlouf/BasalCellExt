@@ -20,7 +20,7 @@ from itertools import chain
 from skimage.measure import label as connected_component
 
 # custom modules
-import roi
+from basalcellext import roi
 
 #%gui qt5 # use for napari in Jupyter notebook, comment otherwise %gui qt5
 
