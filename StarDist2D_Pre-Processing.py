@@ -28,8 +28,8 @@ from skimage.measure import label as connected_component
 import h5py
 
 # custom modules
-import geometry
-import mask_generate
+from basalcellext import geometry
+from basalcellext import mask_generate
 
 # close all hdf5/h5 files
 for obj in gc.get_objects():   # Browse through ALL objects
