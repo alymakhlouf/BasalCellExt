@@ -1,6 +1,12 @@
 # BasalCellExt
 Code for analysing 2D and 3D confocal microscopy images
 
+## Overview
+
+Spheroid, lumen and membrane segmentations (object prediction files) were generated in [ilastik](https://www.ilastik.org/index.html). Object prediction files were then read and analysed in Python. <ins>**Important Note**</ins>: Membrane segmentations were only used in 2D analysis scripts. 
+
+Nuclear segmentations (label files) were generated in Python using [StarDist](https://github.com/stardist/stardist). Label files were then imported in ilastik to train a positive/negative nuclear marker classifier. Classifier files were then read and analysed in Python.
+
 ## Installation
 
 git clone git@github.com:alymakhlouf/BasalCellExt.git  
@@ -8,10 +14,6 @@ cd BasalCellExt
 conda env create -f environment.yml
 
 ## How to run the scripts  
-
-Spheroid, lumen and membrane segmentations (object prediction files) were generated in [ilastik](https://www.ilastik.org/index.html). Object prediction files were then read and analysed in Python. <ins>**Important Note**</ins>: Membrane segmentations were only used in 2D analysis scripts. 
-
-Nuclear segmentations (label files) were generated in Python using [StarDist](https://github.com/stardist/stardist). Label files were then imported in ilastik to train a positive/negative nuclear marker classifier. Classifier files were then read and analysed in Python.
 
 The following script can be run directly:
 - StarDist2D_2D_Monolayer.py
