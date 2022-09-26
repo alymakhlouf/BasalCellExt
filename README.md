@@ -9,30 +9,28 @@ Nuclear segmentations (label files) were generated in Python using [StarDist](ht
 
 ## Installation
 
+```console
 git clone git@github.com:alymakhlouf/BasalCellExt.git  
 cd BasalCellExt  
 conda env create -f environment.yml
+```
 
-## How to run the scripts  
+## Segmentation
+### Monolayer Segmentation
 
-The following script can be run directly:
-- StarDist2D_2D_Monolayer.py
+```console
+python StarDist2D_2D_Monolayer.py
+```
 
-Otherwise, you need to separately generate segmentations in [ilastik](https://www.ilastik.org/index.html) for the spheroid, the lumen and the membranes, before running the scripts. First, you will need to run the 'Pixel Classification' workflow to generate a set of 'Pixel Prediction Map' files (https://www.ilastik.org/documentation/pixelclassification/pixelclassification). For spheroids and lumens, input these 'Pixel Prediction Map' files into an 'Object Classification' workflow [Inputs: Raw Data, Pixel Prediction Map] (https://www.ilastik.org/documentation/objects/objects). For membranes, input these 'Pixel Prediction Map' files into a 'Multicut Segmentation' workflow (https://www.ilastik.org/documentation/multicut/multicut). This will generate a set of 'Object Prediction Map' files in H5 format. 
+### Stardist Segmentation
 
-At this point, the following script can be run directly, making sure all relevant directories in the script map to the relevant 'Object Prediction Map' files:
-- StarDist3D.py
+1. Generate spheroid, lumen and membrane segmentations in [ilastik](https://www.ilastik.org/index.html):
+   1. run the [Pixel Classification](https://www.ilastik.org/documentation/pixelclassification/pixelclassification) workflow to generate a set of 'Pixel Prediction Map' files.
+   2. For spheroids and lumens, input these 'Pixel Prediction Map' files into an 'Object Classification' workflow [Inputs: Raw Data, Pixel Prediction Map](https://www.ilastik.org/documentation/objects/objects). 
+   3. For membranes, input these 'Pixel Prediction Map' files into a [Multicut Segmentation workflow](https://www.ilastik.org/documentation/multicut/multicut). This will generate a set of 'Object Prediction Map' files in the H5 format. 
+2. Choose between `Stardist2D, Stardist3D, StarDist3D_Basic` and `StarDist3D_Density` processing methods according to your image dimensions, now referred to as `<method>`
+3. Preprocessing: run 
+`python <method>_Pre-Processing.py`
+unless your are using the `StarDist3D` method. This will generate cropped TIF files of individual spheroids in each image, as well as a nuclear label mask in HDF5 format for each spheroid, using [StarDist](https://github.com/stardist/stardist). You will need to input these cropped TIF files and their corresponding nuclear label files into the ilastik [Object Classification Workflow Inputs: Raw Data, Segmentation](https://www.ilastik.org/documentation/objects/objects) and use this to train a positive/negative nuclear marker classifier. This will generate a set of 'Object Prediction Map' files in H5 format.
+4. Predict the stardist segmentation `python <method>.py`. Note: ensure that all relevant directories in the script map to the relevant 'Object Prediction Map' files. 
 
-The following scripts have corresponding '...\_Pre-Processing.py' scripts that need to be run first:
-
-- StarDist2D.py
-- StarDist3D_Basic.py
-- StarDist3D_Density.py
-
-'Pre-Processing' scripts will generate cropped TIF files of individual spheroids in each image, as well as a nuclear label mask in HDF5 format for each spheroid, using [StarDist](https://github.com/stardist/stardist). You will need to input these cropped TIF files and their corresponding nuclear label files into an 'Object Classification' Workflow [Inputs: Raw Data, Segmentation] (https://www.ilastik.org/documentation/objects/objects) and use this to train a positive/negative nuclear marker classifier. This will generate a set of 'Object Prediction Map' files in H5 format. 
-
-At this point, the following scripts can be run directly, making sure all relevant directories in the scripts map to the relevant 'Object Prediction Map' files:
-
-- StarDist2D.py
-- StarDist3D_Basic.py
-- StarDist3D_Density.py
