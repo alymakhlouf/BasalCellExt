@@ -26,8 +26,8 @@ python StarDist2D_2D_Monolayer.py
 
 1. Generate spheroid, lumen and membrane segmentations in [ilastik](https://www.ilastik.org/index.html):
    1. run the [Pixel Classification](https://www.ilastik.org/documentation/pixelclassification/pixelclassification) workflow to generate a set of 'Pixel Prediction Map' files.
-   2. For spheroids and lumens, input these 'Pixel Prediction Map' files into an Object Classification Workflow [Inputs: Raw Data, Pixel Prediction Map](https://www.ilastik.org/documentation/objects/objects). 
-   3. For membranes, input these 'Pixel Prediction Map' files into a [Multicut Segmentation workflow](https://www.ilastik.org/documentation/multicut/multicut). This will generate a set of 'Object Prediction Map' files in the H5 format. 
+   2. For spheroids and lumens, input these 'Pixel Prediction Map' files into an [Object Classification Workflow (Inputs: Raw Data, Pixel Prediction Map)](https://www.ilastik.org/documentation/objects/objects). 
+   3. For membranes, input these 'Pixel Prediction Map' files into a [Multicut Segmentation workflow](https://www.ilastik.org/documentation/multicut/multicut). This will generate a set of 'Object Prediction Map' files in H5 format. 
 2. Choose between `Stardist2D, Stardist3D, StarDist3D_Basic` and `StarDist3D_Density` processing methods according to your image dimensions, now referred to as `<method>`
 3. Preprocessing: run 
 `python <method>_Pre-Processing.py`
