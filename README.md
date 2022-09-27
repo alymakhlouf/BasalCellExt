@@ -22,7 +22,7 @@ conda env create -f environment.yml
 python StarDist2D_2D_Monolayer.py
 ```
 
-### Stardist Segmentation
+### 3D EpiSC Segmentation
 
 1. Generate spheroid, lumen and membrane segmentations in [ilastik](https://www.ilastik.org/index.html):
    1. run the [Pixel Classification](https://www.ilastik.org/documentation/pixelclassification/pixelclassification) workflow to generate a set of 'Pixel Prediction Map' files.
