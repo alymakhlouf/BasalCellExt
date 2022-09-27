@@ -32,5 +32,5 @@ python StarDist2D_2D_Monolayer.py
 3. Preprocessing: run 
 `python <method>_Pre-Processing.py`
 unless your are using the `StarDist3D` method. This will generate cropped TIF files of individual spheroids in each image, as well as a nuclear label mask in HDF5 format for each spheroid, using [StarDist](https://github.com/stardist/stardist). You will need to input these cropped TIF files and their corresponding nuclear label files into the ilastik [Object Classification Workflow (Inputs: Raw Data, Segmentation)](https://www.ilastik.org/documentation/objects/objects) and use this to train a positive/negative nuclear marker classifier. This will generate a set of 'Object Prediction Map' files in H5 format.
-4. Predict the stardist segmentation `python <method>.py`. Note: ensure that all relevant directories in the script map to the relevant 'Object Prediction Map' files. 
+4. Analyse the segmentations `python <method>.py`. Note: ensure that all relevant directories in the script map to the relevant 'Object Prediction Map' files. 
 
