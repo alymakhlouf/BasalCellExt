@@ -10,7 +10,7 @@ Nuclear segmentations (label files) were generated in Python using [StarDist](ht
 ## Installation
 
 ```console
-git clone git@github.com:alymakhlouf/BasalCellExt.git  
+https://github.com/alymakhlouf/BasalCellExt.git
 cd BasalCellExt  
 conda env create -f environment.yml
 ```
